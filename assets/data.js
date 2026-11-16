@@ -50,7 +50,7 @@ patches:[
 {h:"Contracts and your assistant",items:["Your assistant no longer changes a contract while you are negotiating it.","Top scorers, first-choice players and players with playing-time promises are protected from sales.","Staff hiring only fills empty jobs unless you turn on upgrades."]},
 {h:"Interface",items:["Changing currency in Preferences updates the screen straight away.","Removed an empty line in the inbox.","The club picker shows the correct number of clubs."]},
 {h:"Season",items:["Continental finals get a highlight with the result and date.","Reaching a continental final now earns credit with the board."]}]},
-{v:"1.0.0.57",date:"2026-11-05",title:"Main squad first",img:"training.jpg",summary:"A new first-team roster, a development pathway for U23 and U21, new Preferences and many management screens.",sections:[
+{v:"1.0.0.57",date:"2026-11-05",title:"Main squad first",img:"online.jpg",summary:"A new first-team roster, a development pathway for U23 and U21, new Preferences and many management screens.",sections:[
 {h:"Main team comes first",items:["New first-team roster with a pinned header, fitness bars, availability badges and nationality flags for 130 countries.","Main is now the default squad page.","U23 and U21 teams move to a Development pathway, each with its own coaches."]},
 {h:"Money and contracts",items:["Money looks the same on every screen, and counter-offers no longer show 'K' twice.","Expiring contracts are split into first team, academy and staff, with reply dates."]},
 {h:"Board and season",items:["Board targets are based on squad strength, last season's finish and reputation, and move at most one level a season.","A once-per-season warning if your squad is getting old or thin."]},
@@ -137,7 +137,7 @@ tactics:{tag:"Tactics",title:"Your system. Your rules.",img:"tactics2.jpg",lead:
 {h:"Shape",items:["15 formation presets with player roles and zones.","Goalkeeper lock and individual instructions.","Set-piece routines."]},
 {h:"Learning your system",items:["Tactical familiarity grows with training days and match minutes.","Player partnerships build understanding between players who play together.","Behaviour training: receiving under pressure, pressing, combinations and recovery."]},
 {h:"Tactical testing ground",p:"Play ten simulated minutes against reserves, a low block, a high press or while protecting a lead. It never affects your career."}],related:["matchday","development"]},
-development:{tag:"Academy",title:"Grow your own stars.",img:"training.jpg",lead:"Three squads, development leagues and a full pathway from academy to first team.",sections:[
+development:{tag:"Academy",title:"Grow your own stars.",img:"tactics2.jpg",lead:"Three squads, development leagues and a full pathway from academy to first team.",sections:[
 {h:"Three squads",items:["Main, Reserves (U23) and Youth (U21).","Development leagues for the younger teams, each with its own coaches."]},
 {h:"Pathway planner",p:"Plan academy, development team, loan and first-team stages for your best prospects, and track their progress."},
 {h:"Loans",p:"The loan development centre follows appearances, goals and progress reports for players you send out on loan."}],related:["tactics","hq"]},
@@ -151,7 +151,7 @@ online:{tag:"Online",title:"Play with friends.",img:"online.jpg",lead:"Share one
 {h:"Trade players",p:"Make deals with each other in the full transfer desk, with clauses, swaps and loans."},
 {h:"Skip together",p:"Friends can skip through matches together."}],related:["transfers","matchday"]}
 },
-media:[["shot_hq.jpg","Club HQ"],["shot_transfer.jpg","Transfer desk"],["shot_squad.jpg","Squad and scouting"],["stadium.jpg","Matchday stadium"],["clubs.jpg","Choose your club"],["matchday.jpg","Tunnel"],["hq.jpg","Club HQ"],["online.jpg","Training campus"],["tactics.jpg","Tactics"],["tactics2.jpg","Tactics board"],["training.jpg","Training"],["awards.jpg","Awards night"]]
+media:[["shot_hq.jpg","Club HQ"],["shot_transfer.jpg","Transfer desk"],["shot_squad.jpg","Squad and scouting"],["stadium.jpg","Matchday stadium"],["clubs.jpg","Choose your club"],["matchday.jpg","Tunnel"],["hq.jpg","Club HQ"],["online.jpg","Training campus"],["tactics.jpg","Tactics"],["tactics2.jpg","Tactics board"],["awards.jpg","Awards night"]]
 };
 SM.news=[
 {href:"patch-notes.html?v=1.0.0.70",cat:"Update",title:"Version 1.0.0.70 is here",img:"clubs.jpg",date:"2026-11-16",p:"A new club carousel, original crests and kits for all 689 clubs, and much more."},
