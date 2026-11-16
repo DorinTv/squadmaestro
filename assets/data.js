@@ -1,5 +1,14 @@
 window.SM={
 patches:[
+{v:"1.0.0.71",date:"2026-11-16",title:"Stadiums, weather and club money",img:"clubs.jpg",summary:"Every stadium gets its own shape, new pitch mowing patterns, real rain and snow in 3D, and fairer transfer budgets and debt.",sections:[
+{h:"Stadiums",items:["Each venue now has its own stadium shape: stands, roofs, outside walls and the streets around it.","The stadium preview shows the new look for every club."]},
+{h:"Pitch",items:["Six mowing patterns with different colours and stripe widths.","The grass now wears out and dries depending on its condition."]},
+{h:"Weather",items:["When the forecast says rain, it now rains in the 3D match.","Puddles on the pitch, falling and settling snow, winter pitch lines and an orange ball in the snow."]},
+{h:"Transfer budgets and debt",items:["Debt payments now follow a proper schedule instead of all starting on day one.","The full fee of a signing is kept apart from the money you pay up front.","Instalments, reserves and debt payments still limit what you can spend.","Money from the owner or from loans is limited and recorded as debt or capital."]},
+{h:"Transfer history",items:["Clubs now have five seasons of transfer spending (2021/22 to 2025/26) behind their budgets."]},
+{h:"Players",items:["Thousands of players got more accurate heights and preferred feet.","All player names in the game are still fictional. Ratings, wages and contracts are unchanged."]},
+{h:"Kept from earlier versions",items:["Club carousel, crests, kits and the 200 fictional sponsors.","The friend transfer desk and all earlier fixes.","Your existing saves still work."]},
+{h:"Known issues",items:["Club finances are still being improved.","Stadium cameras are still being checked for every venue."]}]},
 {v:"1.0.0.70",date:"2026-11-16",title:"Clubs, crests and sponsors",img:"clubs.jpg",summary:"A new club carousel, an original crest and kits for all 689 clubs, 200 fictional sponsors and a stadium picture for every venue.",sections:[
 {h:"Choosing your club",items:["New three-card club carousel with country, division and search filters.","Each club card shows the club's budget, debt, squad and what the board expects.","A clear message appears when a search finds no clubs."]},
 {h:"Crests and kits",items:["Every one of the 689 clubs now has its own original crest plus home and away kits.","Crest, kit maker and main sponsor are printed on the shirts.","Shorts and socks now match the club's kit.","Fixed wrong badge and leg colours on 3D players."]},
@@ -154,6 +163,7 @@ online:{tag:"Online",title:"Play with friends.",img:"online.jpg",lead:"Share one
 media:[["shot_hq.jpg","Club HQ"],["shot_transfer.jpg","Transfer desk"],["shot_squad.jpg","Squad and scouting"],["stadium.jpg","Matchday stadium"],["clubs.jpg","Choose your club"],["matchday.jpg","Tunnel"],["hq.jpg","Club HQ"],["online.jpg","Training campus"],["tactics.jpg","Tactics"],["tactics2.jpg","Tactics board"],["awards.jpg","Awards night"]]
 };
 SM.news=[
+{href:"patch-notes.html?v=1.0.0.71",cat:"Update",title:"Version 1.0.0.71 is here",img:"stadium.jpg",date:"2026-11-16",p:"Its own shape for every stadium, rain and snow in 3D, new pitch patterns and fairer transfer budgets."},
 {href:"patch-notes.html?v=1.0.0.70",cat:"Update",title:"Version 1.0.0.70 is here",img:"clubs.jpg",date:"2026-11-16",p:"A new club carousel, original crests and kits for all 689 clubs, and much more."},
 {href:"news.html?id=sponsors",cat:"Feature",title:"200 sponsor brands",img:"shot_hq.jpg",date:"2026-11-16",p:"Sign partners on the new partnership wall and see them on your shirts."},
 {href:"news.html?id=stadiums",cat:"Feature",title:"A picture of every stadium",img:"matchday.jpg",date:"2026-11-16",p:"Each venue now has its own stadium picture."},
