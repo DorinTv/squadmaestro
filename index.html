@@ -11,167 +11,225 @@
 @font-face{font-family:Barlow;src:url(assets/Barlow-SemiBold.ttf);font-weight:600}
 @font-face{font-family:BarlowC;src:url(assets/BarlowCondensed-Bold.ttf);font-weight:700}
 @font-face{font-family:BarlowC;src:url(assets/BarlowCondensed-ExtraBold.ttf);font-weight:800}
-:root{--bg:#13242e;--surface:#203744;--surface2:#304b5b;--line:#617d8b;--gold:#efc74b;--ink:#12242d;--fg:#edf1f0;--muted:#bdcbd0;--cyan:#39c5db;--paper:#e1e7e8;--good:#68d09f}
+:root{--black:#07090b;--bg:#0d1419;--navy:#13242e;--line:rgba(255,255,255,.12);--gold:#efc74b;--gold2:#c9a43a;--fg:#edf1f0;--muted:#9aa8ae;--cyan:#39c5db}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font:400 16px/1.55 Barlow,Arial,sans-serif;background-image:linear-gradient(rgba(19,36,46,.78),rgba(19,36,46,.96)),url(assets/stadium.jpg);background-size:cover;background-attachment:fixed;background-position:center}
+body{background:var(--black);color:var(--fg);font:400 16px/1.6 Barlow,Arial,sans-serif;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
-h1,h2,h3,.cond{font-family:BarlowC,Arial Narrow,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.01em}
-header{position:sticky;top:0;z-index:10;padding-top:18px}
-.bar{display:flex;align-items:center;gap:18px;background:rgba(19,36,46,.92);border:1px solid rgba(97,125,139,.4);padding:10px 18px;backdrop-filter:blur(6px)}
-.bar img{width:46px;height:46px}
-.brand{font:700 32px/1 BarlowC,sans-serif}
-.sub b{display:block;font:700 20px/1 BarlowC,sans-serif;text-transform:uppercase}
-.sub span{font-size:11px;color:var(--muted);letter-spacing:.04em}
-nav{margin-left:auto;display:flex;gap:4px}
-nav a{font:700 15px/1 BarlowC,sans-serif;text-transform:uppercase;color:var(--muted);padding:10px 14px}
-nav a:hover{color:var(--fg);background:rgba(255,255,255,.07)}
-.studio{font:700 15px BarlowC,sans-serif;color:var(--muted);padding-left:14px;border-left:1px solid rgba(97,125,139,.5)}
-.tile{position:relative;background:rgba(19,36,46,.8);border:1px solid rgba(97,125,139,.5);display:flex;flex-direction:column;overflow:hidden}
-.tile .band{background:rgba(225,231,232,.94);color:var(--ink);padding:8px 14px;font:700 28px/1.15 BarlowC,sans-serif;text-transform:uppercase;position:relative;z-index:1}
-.tile .art{flex:1;min-height:170px;background-size:cover;background-position:center;filter:saturate(.95)}
-.tile .foot{background:rgba(19,36,46,.9);padding:12px 14px 14px}
-.tile .foot p{font-size:15px;margin-bottom:10px}
-.btn{display:block;text-align:center;font:700 16px/1 BarlowC,sans-serif;text-transform:uppercase;padding:11px 16px;background:rgba(53,94,112,.94);border:1px solid rgba(97,125,139,.6);color:var(--fg);transition:.15s}
-.btn:hover{background:#4b7e90;border-color:var(--cyan)}
-.btn.gold{background:var(--gold);color:var(--ink);border-color:rgba(239,199,75,.5);font-size:18px;padding:13px 16px}
-.btn.gold:hover{background:#f5d465}
-.hero{display:grid;grid-template-columns:1.65fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;margin-top:14px;height:min(78vh,700px);min-height:560px}
-.hero .main{grid-row:span 2}
-.hero .main .art{position:relative}
-.hero .main .art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(19,36,46,.85),rgba(19,36,46,.1) 65%)}
-.headline{position:absolute;left:28px;bottom:150px;z-index:2;max-width:560px}
-.headline h1{font-size:72px;line-height:.92;text-shadow:0 3px 10px rgba(0,0,0,.5)}
-.headline p{font-size:18px;color:#d6dee2;margin-top:14px;max-width:470px}
-.headline .tag{display:inline-block;background:var(--gold);color:var(--ink);font:700 14px BarlowC,sans-serif;text-transform:uppercase;padding:4px 10px;margin-bottom:14px}
-section{margin-top:56px}
-.sec-head{display:flex;align-items:baseline;justify-content:space-between;background:rgba(84,115,132,.76);padding:8px 16px;border:1px solid rgba(97,125,139,.45);border-bottom:none}
-.sec-head h2{font-size:30px}
-.sec-head span{font:700 14px BarlowC,sans-serif;text-transform:uppercase;color:var(--muted)}
-.panel{background:rgba(32,55,68,.82);border:1px solid rgba(97,125,139,.45);padding:22px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.feat{height:330px}
-.feat .band{font-size:24px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
-.stat{background:rgba(19,36,46,.9);border:1px solid rgba(97,125,139,.45);padding:16px 18px}
-.stat b{display:block;font:800 52px/1 BarlowC,sans-serif;color:var(--gold)}
-.stat span{font:700 15px BarlowC,sans-serif;text-transform:uppercase;color:var(--muted)}
-.shots{display:grid;grid-template-columns:2fr 1fr;gap:12px}
-.shots figure{background:rgba(19,36,46,.9);border:1px solid rgba(97,125,139,.45);overflow:hidden;cursor:zoom-in}
-.shots img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.shots figure:hover img{transform:scale(1.03)}
-.shots .side{display:grid;gap:12px}
-figcaption{font:700 15px BarlowC,sans-serif;text-transform:uppercase;padding:8px 12px;color:var(--muted)}
-.notes{display:grid;grid-template-columns:260px 1fr;gap:0}
-.notes .ver{background:rgba(19,36,46,.9);padding:22px;border-right:1px solid rgba(97,125,139,.45)}
-.notes .ver b{display:block;font:800 46px/1 BarlowC,sans-serif;color:var(--gold)}
-.notes .ver span{color:var(--muted);font-size:14px}
-.notes ul{list-style:none;padding:22px 26px;columns:2;column-gap:36px}
-.notes li{break-inside:avoid;padding:6px 0 6px 18px;position:relative;font-size:15px}
-.notes li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--cyan)}
-.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.step{background:rgba(19,36,46,.9);border:1px solid rgba(97,125,139,.45);padding:20px}
-.step i{font:800 38px/1 BarlowC,sans-serif;color:var(--cyan);font-style:normal}
-.step h3{font-size:24px;margin:8px 0 4px}
-.step p{color:var(--muted);font-size:15px}
-footer{margin:56px 0 0;background:rgba(15,30,39,.97);border-top:1px solid rgba(97,125,139,.4);padding:26px 0;color:var(--muted);font-size:13px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer b{font:700 18px BarlowC,sans-serif;color:var(--fg);text-transform:uppercase}
-.lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
-.lb img{max-width:94vw;max-height:90vh;border:1px solid var(--line)}
-@media(max-width:960px){.hero{grid-template-columns:1fr 1fr;height:auto}.hero .main{grid-column:span 2;grid-row:auto;height:520px}.hero .tile:not(.main){height:300px}.grid3,.how{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.shots{grid-template-columns:1fr}.notes{grid-template-columns:1fr}.notes ul{columns:1}nav,.studio{display:none}.headline h1{font-size:52px}}
-@media(max-width:600px){.hero,.grid3,.how{grid-template-columns:1fr}.hero .main{grid-column:auto}.brand{font-size:24px}.sub{display:none}}
+.c{font-family:BarlowC,Arial Narrow,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+/* top menu */
+.top{position:fixed;inset:0 0 auto;z-index:20;height:72px;display:flex;align-items:center;padding:0 40px;gap:40px;background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,0));transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.top.solid{background:rgba(7,9,11,.94);border-color:var(--line);backdrop-filter:blur(8px)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{width:40px;height:40px}
+.logo b{font:800 24px/1 BarlowC,sans-serif;letter-spacing:.06em}
+.menu{display:flex;gap:6px;margin:0 auto}
+.menu a{font:700 16px/72px BarlowC,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:0 18px;color:#d5dbde;position:relative}
+.menu a::after{content:"";position:absolute;left:18px;right:18px;bottom:18px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .25s}
+.menu a:hover{color:#fff}.menu a:hover::after{transform:scaleX(1)}
+.cta{font:700 15px/1 BarlowC,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:13px 26px;background:linear-gradient(#f5d365,var(--gold2));color:#14110a;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transition:filter .2s}
+.cta:hover{filter:brightness(1.12)}
+.ghost{font:700 15px/1 BarlowC,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:12px 26px;border:1px solid rgba(255,255,255,.4);color:#fff;transition:.2s}
+.ghost:hover{border-color:var(--gold);color:var(--gold)}
+/* hero */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
+.slide.on{opacity:1}
+.slide .img{position:absolute;inset:-2%;background-size:cover;background-position:center;transform:scale(1);transition:transform 9s linear}
+.slide.on .img{transform:scale(1.08)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 0%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.85) 100%),linear-gradient(rgba(7,9,11,0) 55%,var(--black) 100%);pointer-events:none}
+.hero-txt{position:absolute;z-index:2;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 20px}
+.hero-txt img{width:110px;height:110px;filter:drop-shadow(0 6px 24px rgba(0,0,0,.6))}
+.hero-txt h1{font:800 clamp(56px,9vw,128px)/.9 BarlowC,sans-serif;letter-spacing:.05em;text-transform:uppercase;margin-top:18px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+.hero-txt .tl{font:700 clamp(16px,1.6vw,22px)/1 BarlowC,sans-serif;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-top:18px}
+.hero-txt p{max-width:560px;margin:22px auto 0;color:#d3dadd;font-size:18px}
+.hero-txt .btns{display:flex;justify-content:center;gap:14px;margin-top:34px}
+.tabs{position:absolute;z-index:3;left:50%;bottom:44px;transform:translateX(-50%);display:flex;gap:2px;width:min(1100px,92vw)}
+.tab{flex:1;cursor:pointer;padding:14px 16px 12px;background:rgba(7,9,11,.55);border-top:2px solid rgba(255,255,255,.18);backdrop-filter:blur(4px);transition:.25s;position:relative;overflow:hidden}
+.tab small{display:block;font:700 12px BarlowC,sans-serif;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.tab b{font:700 17px BarlowC,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.tab .p{position:absolute;left:0;top:-2px;height:2px;width:0;background:var(--gold)}
+.tab.on{background:rgba(7,9,11,.82)}.tab.on small{color:var(--gold)}
+.tab.on .p{animation:fill 7s linear forwards}
+@keyframes fill{to{width:100%}}
+.scroll{position:absolute;z-index:3;left:50%;bottom:8px;transform:translateX(-50%);font:700 11px BarlowC,sans-serif;letter-spacing:.3em;color:var(--muted)}
+/* sections */
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.sh{text-align:center;margin-bottom:44px}
+.sh small{font:700 14px BarlowC,sans-serif;letter-spacing:.4em;color:var(--gold);text-transform:uppercase}
+.sh h2{font:800 clamp(38px,4.6vw,64px)/1 BarlowC,sans-serif;letter-spacing:.04em;text-transform:uppercase;margin-top:8px}
+.sh .dv{width:60px;height:2px;background:var(--gold);margin:18px auto 0}
+.news{padding:110px 0 100px;background:linear-gradient(var(--black),var(--bg))}
+.ntabs{display:flex;justify-content:center;gap:4px;margin-bottom:34px}
+.ntabs button{all:unset;cursor:pointer;font:700 15px BarlowC,sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:10px 22px;color:var(--muted);border-bottom:2px solid transparent}
+.ntabs button.on,.ntabs button:hover{color:#fff;border-color:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#10181d;border:1px solid var(--line);overflow:hidden;transition:transform .3s,border-color .3s;cursor:pointer}
+.card:hover{transform:translateY(-6px);border-color:rgba(239,199,75,.6)}
+.card .im{height:190px;background-size:cover;background-position:center;transition:transform .5s}
+.card:hover .im{transform:scale(1.06)}
+.card .bd{padding:18px 20px 22px;position:relative;background:#10181d}
+.card .tg{font:700 12px BarlowC,sans-serif;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+.card h3{font:700 22px/1.15 BarlowC,sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:6px 0 8px}
+.card p{color:var(--muted);font-size:14px}
+.card .dt{font-size:12px;color:#6f7d83;margin-top:12px}
+.feat{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden;border-top:1px solid var(--line)}
+.feat .bgi{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform}
+.feat::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,9,11,.95) 0%,rgba(7,9,11,.7) 35%,rgba(7,9,11,0) 70%)}
+.feat.r::before{background:linear-gradient(270deg,rgba(7,9,11,.95) 0%,rgba(7,9,11,.7) 35%,rgba(7,9,11,0) 70%)}
+.feat .tx{position:relative;z-index:2;max-width:520px;margin-left:max(40px,calc((100vw - 1280px)/2 + 40px))}
+.feat.r .tx{margin-left:auto;margin-right:max(40px,calc((100vw - 1280px)/2 + 40px))}
+.feat small{font:700 14px BarlowC,sans-serif;letter-spacing:.4em;color:var(--gold)}
+.feat h2{font:800 clamp(44px,5vw,76px)/.95 BarlowC,sans-serif;text-transform:uppercase;letter-spacing:.03em;margin:12px 0 20px}
+.feat p{color:#cfd7da;font-size:18px}
+.feat ul{list-style:none;margin-top:22px}
+.feat li{padding:8px 0 8px 26px;position:relative;border-bottom:1px solid var(--line);font-size:15px;color:#dfe5e7}
+.feat li::before{content:"";position:absolute;left:2px;top:17px;width:9px;height:9px;border:2px solid var(--gold);transform:rotate(45deg)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+.stats{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.st{text-align:center;padding:46px 10px;border-left:1px solid var(--line)}.st:first-child{border:none}
+.st b{display:block;font:800 64px/1 BarlowC,sans-serif;color:var(--gold)}
+.st span{font:700 14px BarlowC,sans-serif;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+.media{padding:110px 0;background:var(--bg)}
+.gal{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:16px;height:620px}
+.gal figure{position:relative;overflow:hidden;cursor:zoom-in;border:1px solid var(--line)}
+.gal figure:first-child{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 16px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.85));font:700 18px BarlowC,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.patch{position:relative;padding:120px 0;overflow:hidden}
+.patch .bgi{position:absolute;inset:0;background:url(assets/awards.jpg) center/cover}
+.patch::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(7,9,11,.82)}
+.patch .wrap{position:relative;z-index:2;display:grid;grid-template-columns:360px 1fr;gap:60px;align-items:start}
+.patch .v small{font:700 14px BarlowC,sans-serif;letter-spacing:.4em;color:var(--gold)}
+.patch .v b{display:block;font:800 92px/1 BarlowC,sans-serif;margin:8px 0}
+.patch .v p{color:var(--muted)}
+.patch ol{list-style:none;counter-reset:n;display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.patch li{counter-increment:n;padding:16px 0 16px 52px;position:relative;border-bottom:1px solid var(--line);font-size:16px}
+.patch li::before{content:counter(n,decimal-leading-zero);position:absolute;left:0;top:13px;font:800 26px BarlowC,sans-serif;color:var(--gold)}
+.online{padding:110px 0;background:linear-gradient(var(--bg),var(--black))}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{position:relative;padding:40px 30px 34px;background:#10181d;border:1px solid var(--line);overflow:hidden}
+.step i{position:absolute;right:16px;top:-8px;font:800 120px/1 BarlowC,sans-serif;font-style:normal;color:rgba(239,199,75,.08)}
+.step h3{font:700 28px BarlowC,sans-serif;text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px}
+.step p{color:var(--muted)}
+.step::after{content:"";position:absolute;left:0;top:0;width:44px;height:3px;background:var(--gold)}
+footer{background:#040506;border-top:1px solid var(--line);padding:50px 0 36px;color:#7d8a90;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+footer .fl{display:flex;gap:26px}
+footer .fl a{font:700 14px BarlowC,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#aab5ba}
+footer .fl a:hover{color:var(--gold)}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
+.lb img{max-width:94vw;max-height:90vh}
+@media(max-width:1000px){.menu{display:none}.cards{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.stats .wrap{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr;grid-template-rows:auto;height:auto}.gal figure:first-child{grid-row:auto}.patch .wrap{grid-template-columns:1fr}.patch ol{grid-template-columns:1fr}.tabs{display:none}.feat .bgi{inset:0;transform:none!important}.top{padding:0 20px}.wrap{padding:0 20px}}
+@media(max-width:600px){.cards{grid-template-columns:1fr}.top .cta{display:none}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="bar">
-  <img src="assets/icon.png" alt="Squad Maestro badge">
-  <div class="brand">SQUAD MAESTRO</div>
-  <div class="sub"><b>Football management</b><span>YOUR CLUB. YOUR DECISIONS.</span></div>
-  <nav><a href="#features">Features</a><a href="#screens">Screenshots</a><a href="#notes">Patch notes</a><a href="#online">Play online</a></nav>
-  <div class="studio">BRACA STUDIO</div>
-</div></div></header>
+<header class="top" id="top">
+  <a class="logo" href="#"><img src="assets/icon.png" alt=""><b>SQUAD MAESTRO</b></a>
+  <nav class="menu"><a href="#news">News</a><a href="#game">Game</a><a href="#media">Media</a><a href="#patch">Patch notes</a><a href="#online">Online</a></nav>
+  <a class="cta" href="#patch">What's new</a>
+</header>
 
-<main class="wrap">
-<div class="hero">
-  <div class="tile main">
-    <div class="band">Season 2026</div>
-    <div class="art" style="background-image:url(assets/stadium.jpg)"></div>
-    <div class="headline"><div class="tag">Version 1.0.0.70 out now</div><h1>Your club.<br>Your decisions.</h1><p>Pick a club, build your squad, set your tactics and watch every match live in 3D. Then do it all again next season.</p></div>
-    <div class="foot"><p>Choose a club. Build your squad. Shape your own football story.</p><a class="btn gold" href="#features">Discover the game &nbsp;→</a></div>
+<section class="hero" id="hero">
+  <div class="slide on"><div class="img" style="background-image:url(assets/stadium.jpg)"></div></div>
+  <div class="slide"><div class="img" style="background-image:url(assets/matchday.jpg)"></div></div>
+  <div class="slide"><div class="img" style="background-image:url(assets/clubs.jpg)"></div></div>
+  <div class="slide"><div class="img" style="background-image:url(assets/online.jpg)"></div></div>
+  <div class="hero-txt">
+    <img src="assets/icon.png" alt="Squad Maestro badge">
+    <h1>Squad Maestro</h1>
+    <div class="tl">Your club. Your decisions.</div>
+    <p>Pick a club, build your squad, set your tactics and watch every match live in 3D. Then do it all again next season.</p>
+    <div class="btns"><a class="cta" href="#game">Discover the game</a><a class="ghost" href="#media">Watch screenshots</a></div>
   </div>
-  <div class="tile"><div class="band">Choose your club</div><div class="art" style="background-image:url(assets/clubs.jpg)"></div><div class="foot"><p>689 clubs, each with its own crest and kits.</p><a class="btn" href="#features">See features &nbsp;→</a></div></div>
-  <div class="tile"><div class="band">Play online</div><div class="art" style="background-image:url(assets/online.jpg)"></div><div class="foot"><p>Host a football world or join your friends.</p><a class="btn" href="#online">How it works &nbsp;→</a></div></div>
-  <div class="tile"><div class="band">Matchday</div><div class="art" style="background-image:url(assets/matchday.jpg)"></div><div class="foot"><p>Every match live in 3D, from the touchline.</p><a class="btn" href="#screens">Screenshots &nbsp;→</a></div></div>
-  <div class="tile"><div class="band">Patch notes</div><div class="art" style="background-image:url(assets/awards.jpg)"></div><div class="foot"><p>See what's new in version 1.0.0.70.</p><a class="btn" href="#notes">Read notes &nbsp;→</a></div></div>
+  <div class="tabs">
+    <div class="tab on"><span class="p"></span><small>Season 2026</small><b>Version 1.0.0.70 is out</b></div>
+    <div class="tab"><span class="p"></span><small>Matchday</small><b>Every match live in 3D</b></div>
+    <div class="tab"><span class="p"></span><small>689 clubs</small><b>Choose your club</b></div>
+    <div class="tab"><span class="p"></span><small>Online</small><b>Play with your friends</b></div>
+  </div>
+  <div class="scroll">SCROLL</div>
+</section>
+
+<section class="news" id="news"><div class="wrap">
+  <div class="sh reveal"><small>Latest</small><h2>News</h2><div class="dv"></div></div>
+  <div class="ntabs"><button class="on" data-f="all">All</button><button data-f="update">Updates</button><button data-f="feature">Features</button><button data-f="notice">Notices</button></div>
+  <div class="cards">
+    <a class="card reveal" data-k="update" href="#patch"><div class="im" style="background-image:url(assets/clubs.jpg)"></div><div class="bd"><div class="tg">Update</div><h3>Version 1.0.0.70 is here</h3><p>A new club carousel, original crests and kits for all 689 clubs, and much more.</p><div class="dt">Season 2026</div></div></a>
+    <a class="card reveal" data-k="feature" href="#game"><div class="im" style="background-image:url(assets/shot_hq.jpg)"></div><div class="bd"><div class="tg">Feature</div><h3>200 sponsor brands</h3><p>Sign partners on the new partnership wall and see them on your shirts.</p><div class="dt">Season 2026</div></div></a>
+    <a class="card reveal" data-k="feature" href="#game"><div class="im" style="background-image:url(assets/matchday.jpg)"></div><div class="bd"><div class="tg">Feature</div><h3>A preview of every stadium</h3><p>See each venue before you play there.</p><div class="dt">Season 2026</div></div></a>
+    <a class="card reveal" data-k="notice" href="#online"><div class="im" style="background-image:url(assets/online.jpg)"></div><div class="bd"><div class="tg">Notice</div><h3>Playing online</h3><p>The first connection of the day can take up to a minute while the server wakes up.</p><div class="dt">Season 2026</div></div></a>
+  </div>
+</div></section>
+
+<div class="stats"><div class="wrap">
+  <div class="st reveal"><b>689</b><span>Fictional clubs</span></div>
+  <div class="st reveal"><b>200</b><span>Sponsor brands</span></div>
+  <div class="st reveal"><b>15</b><span>Formations</span></div>
+  <div class="st reveal"><b>3D</b><span>Live matches</span></div>
+</div></div>
+
+<div id="game">
+<section class="feat"><div class="bgi" style="background-image:url(assets/clubs.jpg)"></div><div class="tx reveal"><small>CHOOSE YOUR CLUB</small><h2>689 clubs.<br>One is yours.</h2><p>Browse clubs by country, division or name. Every club has its own crest, home and away kits, budget, debt and board expectations.</p><ul><li>Original crests and kits for every club</li><li>Brazil's four national divisions</li><li>Budget, squad and board goals before you sign</li></ul></div></section>
+<section class="feat r"><div class="bgi" style="background-image:url(assets/matchday.jpg)"></div><div class="tx reveal"><small>MATCHDAY</small><h2>Every match,<br>live in 3D.</h2><p>Watch from the touchline and change the game as it happens.</p><ul><li>Real-time substitutions and team talks</li><li>15 formations, player roles and zones</li><li>Stadium previews for every venue</li></ul></div></section>
+<section class="feat"><div class="bgi" style="background-image:url(assets/hq.jpg)"></div><div class="tx reveal"><small>CLUB HQ</small><h2>Run the<br>whole club.</h2><p>Money, people and reputation are all in your hands.</p><ul><li>Sponsors, finances and signing fees</li><li>Staff, scouting and the youth academy</li><li>A reputation that grows or falls every season</li></ul></div></section>
+<section class="feat r"><div class="bgi" style="background-image:url(assets/tactics.jpg)"></div><div class="tx reveal"><small>TRANSFERS</small><h2>Close the<br>big deals.</h2><p>Negotiate in a full transfer desk, with the AI or with your friends.</p><ul><li>Payments over time, sell-on clauses and bonuses</li><li>Buy-back clauses, swaps, loans and loan with option to buy</li><li>Counter-offers until both sides agree</li></ul></div></section>
 </div>
 
-<div class="stats">
-  <div class="stat"><b>689</b><span>Fictional clubs</span></div>
-  <div class="stat"><b>200</b><span>Sponsor brands</span></div>
-  <div class="stat"><b>15</b><span>Formation presets</span></div>
-  <div class="stat"><b>4</b><span>National tiers in Brazil</span></div>
-</div>
+<section class="media" id="media"><div class="wrap">
+  <div class="sh reveal"><small>Gallery</small><h2>Media</h2><div class="dv"></div></div>
+  <div class="gal reveal">
+    <figure><img src="assets/shot_hq.jpg" alt="Club HQ"><figcaption>Club HQ</figcaption></figure>
+    <figure><img src="assets/shot_transfer.jpg" alt="Transfer desk"><figcaption>Transfer desk</figcaption></figure>
+    <figure><img src="assets/shot_squad.jpg" alt="Squad and scouting"><figcaption>Squad and scouting</figcaption></figure>
+  </div>
+</div></section>
 
-<section id="features">
-  <div class="sec-head"><h2>Run the whole club</h2><span>Features</span></div>
-  <div class="panel"><div class="grid3">
-    <div class="tile feat"><div class="band">Tactics</div><div class="art" style="background-image:url(assets/tactics.jpg)"></div><div class="foot"><p>15 formations, player roles and zones, team instructions and a goalkeeper lock.</p></div></div>
-    <div class="tile feat"><div class="band">Transfers</div><div class="art" style="background-image:url(assets/shot_transfer.jpg)"></div><div class="foot"><p>Negotiate fees, payments over time, sell-on clauses, bonuses, swaps and loans.</p></div></div>
-    <div class="tile feat"><div class="band">Club HQ</div><div class="art" style="background-image:url(assets/hq.jpg)"></div><div class="foot"><p>Finances, staff, scouting, the academy and a board that expects results.</p></div></div>
-    <div class="tile feat"><div class="band">Sponsors</div><div class="art" style="background-image:url(assets/shot_hq.jpg)"></div><div class="foot"><p>Sign partners from 200 fictional brands and see them on your 2D and 3D shirts.</p></div></div>
-    <div class="tile feat"><div class="band">Matchday</div><div class="art" style="background-image:url(assets/matchday.jpg)"></div><div class="foot"><p>Real-time 3D matches with substitutions, team talks and live commentary.</p></div></div>
-    <div class="tile feat"><div class="band">Your history</div><div class="art" style="background-image:url(assets/awards.jpg)"></div><div class="foot"><p>Trophies, awards and a club reputation that grows or falls season by season.</p></div></div>
-  </div></div>
-</section>
+<section class="patch" id="patch"><div class="bgi"></div><div class="wrap">
+  <div class="v reveal"><small>PATCH NOTES</small><b>1.0.0.70</b><p>The launcher installs every update on its own.</p></div>
+  <ol class="reveal">
+    <li>Choose your club from a three-card carousel with country, division and search filters</li>
+    <li>Every one of the 689 clubs has its own original crest and home and away kits</li>
+    <li>200 fictional sponsor brands, shown on 2D and 3D shirts</li>
+    <li>Partnership wall with signed partners, offers and contract details</li>
+    <li>Sponsorship budgets, signing fees, match payments and yearly caps</li>
+    <li>Promotion and relegation income forecasts</li>
+    <li>Lasting club reputation, with end-of-season news</li>
+    <li>A stadium preview for each venue</li>
+  </ol>
+</div></section>
 
-<section id="screens">
-  <div class="sec-head"><h2>Screenshots</h2><span>From version 1.0.0.70</span></div>
-  <div class="panel"><div class="shots">
-    <figure><img src="assets/shot_hq.jpg" alt="Club HQ screen"><figcaption>Club HQ</figcaption></figure>
-    <div class="side">
-      <figure><img src="assets/shot_transfer.jpg" alt="Transfer desk"><figcaption>Transfer desk</figcaption></figure>
-      <figure><img src="assets/shot_squad.jpg" alt="Squad and scouting"><figcaption>Squad and scouting</figcaption></figure>
-    </div>
-  </div></div>
-</section>
-
-<section id="notes">
-  <div class="sec-head"><h2>Patch notes</h2><span>Latest update</span></div>
-  <div class="panel" style="padding:0"><div class="notes">
-    <div class="ver"><span>VERSION</span><b>1.0.0.70</b><span>Your launcher installs updates on its own.</span></div>
-    <ul>
-      <li>Choose your club from a three-card carousel with country, division and search filters</li>
-      <li>Every one of the 689 clubs has its own original crest and home and away kits</li>
-      <li>200 fictional sponsor brands, shown on 2D and 3D shirts</li>
-      <li>Commercial partnership wall: signed partners, offers and contract details</li>
-      <li>Sponsorship budgets, signing fees, match payments and yearly caps</li>
-      <li>Promotion and relegation income forecasts</li>
-      <li>Lasting club reputation, with end-of-season news</li>
-      <li>A stadium preview for each venue</li>
-    </ul>
-  </div></div>
-</section>
-
-<section id="online">
-  <div class="sec-head"><h2>Play with friends</h2><span>Online</span></div>
-  <div class="panel"><div class="how">
-    <div class="step"><i>01</i><h3>Host a world</h3><p>One friend creates an online football world and shares its name and password.</p></div>
-    <div class="step"><i>02</i><h3>Join and pick a club</h3><p>Everyone else joins from Play online in the main menu and takes charge of a club.</p></div>
-    <div class="step"><i>03</i><h3>Trade with friends</h3><p>Do deals in the full transfer desk, with clauses, swaps, loans and payments over time.</p></div>
-  </div></div>
-</section>
-</main>
+<section class="online" id="online"><div class="wrap">
+  <div class="sh reveal"><small>Online</small><h2>Play with friends</h2><div class="dv"></div></div>
+  <div class="steps">
+    <div class="step reveal"><i>01</i><h3>Host a world</h3><p>One friend creates an online football world and shares its name and password.</p></div>
+    <div class="step reveal"><i>02</i><h3>Join a club</h3><p>Everyone else joins from Play online in the main menu and takes charge of a club.</p></div>
+    <div class="step reveal"><i>03</i><h3>Trade players</h3><p>Do deals with each other in the full transfer desk, with clauses, swaps and loans.</p></div>
+  </div>
+</div></section>
 
 <footer><div class="wrap">
-  <div><b>Squad Maestro</b><br>A football management game by Braca Studio.</div>
-  <div>All clubs, players, managers and brands in Squad Maestro are fictional.<br>Fonts: Barlow, SIL Open Font License.</div>
+  <a class="logo" href="#"><img src="assets/icon.png" alt=""><b>SQUAD MAESTRO</b></a>
+  <div class="fl"><a href="#news">News</a><a href="#game">Game</a><a href="#media">Media</a><a href="#patch">Patch notes</a><a href="#online">Online</a></div>
+  <div>© Braca Studio. All clubs, players, managers and brands in Squad Maestro are fictional.<br>Fonts: Barlow, SIL Open Font License.</div>
 </div></footer>
 
 <div class="lb" id="lb" onclick="this.style.display='none'"><img id="lbimg" alt=""></div>
 <script>
-document.querySelectorAll('.shots figure').forEach(f=>f.onclick=()=>{lbimg.src=f.querySelector('img').src;lb.style.display='flex'});
+const top_=document.getElementById('top');addEventListener('scroll',()=>top_.classList.toggle('solid',scrollY>40));
+const sl=[...document.querySelectorAll('.slide')],tb=[...document.querySelectorAll('.tab')];let si=0,tm;
+function go(i){sl[si].classList.remove('on');tb[si].classList.remove('on');si=i;void tb[si].offsetWidth;sl[si].classList.add('on');tb[si].classList.add('on');clearTimeout(tm);tm=setTimeout(()=>go((si+1)%sl.length),7000)}
+tb.forEach((t,i)=>t.onclick=()=>go(i));tm=setTimeout(()=>go(1),7000);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+document.querySelectorAll('.ntabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.ntabs button').forEach(x=>x.classList.toggle('on',x==b));document.querySelectorAll('.card').forEach(c=>c.style.display=(b.dataset.f=='all'||c.dataset.k==b.dataset.f)?'':'none')});
+document.querySelectorAll('.gal figure').forEach(f=>f.onclick=()=>{lbimg.src=f.querySelector('img').src;lb.style.display='flex'});
+const fb=[...document.querySelectorAll('.feat .bgi')];function px(){if(innerWidth<1000)return;fb.forEach(b=>{const r=b.parentNode.getBoundingClientRect();b.style.transform='translateY('+((r.top+r.height/2-innerHeight/2)*-0.12)+'px)'})}addEventListener('scroll',px);px();
+if(location.search.includes('shot'))document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'));
 </script>
 </body>
 </html>
