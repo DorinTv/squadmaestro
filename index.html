@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Squad Maestro: Your club. Your decisions.</title>
+<meta name="description" content="Squad Maestro is a football management game by Braca Studio. Pick a club, build your squad, set your tactics and watch every match live in 3D.">
+<link rel="icon" href="assets/icon.png">
+<style>
+@font-face{font-family:Barlow;src:url(assets/Barlow-Regular.ttf);font-weight:400}
+@font-face{font-family:Barlow;src:url(assets/Barlow-SemiBold.ttf);font-weight:600}
+@font-face{font-family:BarlowC;src:url(assets/BarlowCondensed-Bold.ttf);font-weight:700}
+@font-face{font-family:BarlowC;src:url(assets/BarlowCondensed-ExtraBold.ttf);font-weight:800}
+:root{--bg:#13242e;--surface:#203744;--surface2:#304b5b;--line:#617d8b;--gold:#efc74b;--ink:#12242d;--fg:#edf1f0;--muted:#bdcbd0;--cyan:#39c5db;--paper:#e1e7e8;--good:#68d09f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.55 Barlow,Arial,sans-serif;background-image:linear-gradient(rgba(19,36,46,.78),rgba(19,36,46,.96)),url(assets/stadium.jpg);background-size:cover;background-attachment:fixed;background-position:center}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.cond{font-family:BarlowC,Arial Narrow,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.01em}
+header{position:sticky;top:0;z-index:10;padding-top:18px}
+.bar{display:flex;align-items:center;gap:18px;background:rgba(19,36,46,.92);border:1px solid rgba(97,125,139,.4);padding:10px 18px;backdrop-filter:blur(6px)}
+.bar img{width:46px;height:46px}
+.brand{font:700 32px/1 BarlowC,sans-serif}
+.sub b{display:block;font:700 20px/1 BarlowC,sans-serif;text-transform:uppercase}
+.sub span{font-size:11px;color:var(--muted);letter-spacing:.04em}
+nav{margin-left:auto;display:flex;gap:4px}
+nav a{font:700 15px/1 BarlowC,sans-serif;text-transform:uppercase;color:var(--muted);padding:10px 14px}
+nav a:hover{color:var(--fg);background:rgba(255,255,255,.07)}
+.studio{font:700 15px BarlowC,sans-serif;color:var(--muted);padding-left:14px;border-left:1px solid rgba(97,125,139,.5)}
+.tile{position:relative;background:rgba(19,36,46,.8);border:1px solid rgba(97,125,139,.5);display:flex;flex-direction:column;overflow:hidden}
+.tile .band{background:rgba(225,231,232,.94);color:var(--ink);padding:8px 14px;font:700 28px/1.15 BarlowC,sans-serif;text-transform:uppercase;position:relative;z-index:1}
+.tile .art{flex:1;min-height:170px;background-size:cover;background-position:center;filter:saturate(.95)}
+.tile .foot{background:rgba(19,36,46,.9);padding:12px 14px 14px}
+.tile .foot p{font-size:15px;margin-bottom:10px}
+.btn{display:block;text-align:center;font:700 16px/1 BarlowC,sans-serif;text-transform:uppercase;padding:11px 16px;background:rgba(53,94,112,.94);border:1px solid rgba(97,125,139,.6);color:var(--fg);transition:.15s}
+.btn:hover{background:#4b7e90;border-color:var(--cyan)}
+.btn.gold{background:var(--gold);color:var(--ink);border-color:rgba(239,199,75,.5);font-size:18px;padding:13px 16px}
+.btn.gold:hover{background:#f5d465}
+.hero{display:grid;grid-template-columns:1.65fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;margin-top:14px;height:min(78vh,700px);min-height:560px}
+.hero .main{grid-row:span 2}
+.hero .main .art{position:relative}
+.hero .main .art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(19,36,46,.85),rgba(19,36,46,.1) 65%)}
+.headline{position:absolute;left:28px;bottom:150px;z-index:2;max-width:560px}
+.headline h1{font-size:72px;line-height:.92;text-shadow:0 3px 10px rgba(0,0,0,.5)}
+.headline p{font-size:18px;color:#d6dee2;margin-top:14px;max-width:470px}
+.headline .tag{display:inline-block;background:var(--gold);color:var(--ink);font:700 14px BarlowC,sans-serif;text-transform:uppercase;padding:4px 10px;margin-bottom:14px}
+section{margin-top:56px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;background:rgba(84,115,132,.76);padding:8px 16px;border:1px solid rgba(97,125,139,.45);border-bottom:none}
+.sec-head h2{font-size:30px}
+.sec-head span{font:700 14px BarlowC,sans-serif;text-transform:uppercase;color:var(--muted)}
+.panel{background:rgba(32,55,68,.82);border:1px solid rgba(97,125,139,.45);padding:22px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.feat{height:330px}
+.feat .band{font-size:24px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.stat{background:rgba(19,36,46,.9);border:1px solid rgba(97,125,139,.45);padding:16px 18px}
+.stat b{display:block;font:800 52px/1 BarlowC,sans-serif;color:var(--gold)}
+.stat span{font:700 15px BarlowC,sans-serif;text-transform:uppercase;color:var(--muted)}
+.shots{display:grid;grid-template-columns:2fr 1fr;gap:12px}
+.shots figure{background:rgba(19,36,46,.9);border:1px solid rgba(97,125,139,.45);overflow:hidden;cursor:zoom-in}
+.shots img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.shots figure:hover img{transform:scale(1.03)}
+.shots .side{display:grid;gap:12px}
+figcaption{font:700 15px BarlowC,sans-serif;text-transform:uppercase;padding:8px 12px;color:var(--muted)}
+.notes{display:grid;grid-template-columns:260px 1fr;gap:0}
+.notes .ver{background:rgba(19,36,46,.9);padding:22px;border-right:1px solid rgba(97,125,139,.45)}
+.notes .ver b{display:block;font:800 46px/1 BarlowC,sans-serif;color:var(--gold)}
+.notes .ver span{color:var(--muted);font-size:14px}
+.notes ul{list-style:none;padding:22px 26px;columns:2;column-gap:36px}
+.notes li{break-inside:avoid;padding:6px 0 6px 18px;position:relative;font-size:15px}
+.notes li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--cyan)}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.step{background:rgba(19,36,46,.9);border:1px solid rgba(97,125,139,.45);padding:20px}
+.step i{font:800 38px/1 BarlowC,sans-serif;color:var(--cyan);font-style:normal}
+.step h3{font-size:24px;margin:8px 0 4px}
+.step p{color:var(--muted);font-size:15px}
+footer{margin:56px 0 0;background:rgba(15,30,39,.97);border-top:1px solid rgba(97,125,139,.4);padding:26px 0;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer b{font:700 18px BarlowC,sans-serif;color:var(--fg);text-transform:uppercase}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
+.lb img{max-width:94vw;max-height:90vh;border:1px solid var(--line)}
+@media(max-width:960px){.hero{grid-template-columns:1fr 1fr;height:auto}.hero .main{grid-column:span 2;grid-row:auto;height:520px}.hero .tile:not(.main){height:300px}.grid3,.how{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.shots{grid-template-columns:1fr}.notes{grid-template-columns:1fr}.notes ul{columns:1}nav,.studio{display:none}.headline h1{font-size:52px}}
+@media(max-width:600px){.hero,.grid3,.how{grid-template-columns:1fr}.hero .main{grid-column:auto}.brand{font-size:24px}.sub{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="bar">
+  <img src="assets/icon.png" alt="Squad Maestro badge">
+  <div class="brand">SQUAD MAESTRO</div>
+  <div class="sub"><b>Football management</b><span>YOUR CLUB. YOUR DECISIONS.</span></div>
+  <nav><a href="#features">Features</a><a href="#screens">Screenshots</a><a href="#notes">Patch notes</a><a href="#online">Play online</a></nav>
+  <div class="studio">BRACA STUDIO</div>
+</div></div></header>
+
+<main class="wrap">
+<div class="hero">
+  <div class="tile main">
+    <div class="band">Season 2026</div>
+    <div class="art" style="background-image:url(assets/stadium.jpg)"></div>
+    <div class="headline"><div class="tag">Version 1.0.0.70 out now</div><h1>Your club.<br>Your decisions.</h1><p>Pick a club, build your squad, set your tactics and watch every match live in 3D. Then do it all again next season.</p></div>
+    <div class="foot"><p>Choose a club. Build your squad. Shape your own football story.</p><a class="btn gold" href="#features">Discover the game &nbsp;→</a></div>
+  </div>
+  <div class="tile"><div class="band">Choose your club</div><div class="art" style="background-image:url(assets/clubs.jpg)"></div><div class="foot"><p>689 clubs, each with its own crest and kits.</p><a class="btn" href="#features">See features &nbsp;→</a></div></div>
+  <div class="tile"><div class="band">Play online</div><div class="art" style="background-image:url(assets/online.jpg)"></div><div class="foot"><p>Host a football world or join your friends.</p><a class="btn" href="#online">How it works &nbsp;→</a></div></div>
+  <div class="tile"><div class="band">Matchday</div><div class="art" style="background-image:url(assets/matchday.jpg)"></div><div class="foot"><p>Every match live in 3D, from the touchline.</p><a class="btn" href="#screens">Screenshots &nbsp;→</a></div></div>
+  <div class="tile"><div class="band">Patch notes</div><div class="art" style="background-image:url(assets/awards.jpg)"></div><div class="foot"><p>See what's new in version 1.0.0.70.</p><a class="btn" href="#notes">Read notes &nbsp;→</a></div></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>689</b><span>Fictional clubs</span></div>
+  <div class="stat"><b>200</b><span>Sponsor brands</span></div>
+  <div class="stat"><b>15</b><span>Formation presets</span></div>
+  <div class="stat"><b>4</b><span>National tiers in Brazil</span></div>
+</div>
+
+<section id="features">
+  <div class="sec-head"><h2>Run the whole club</h2><span>Features</span></div>
+  <div class="panel"><div class="grid3">
+    <div class="tile feat"><div class="band">Tactics</div><div class="art" style="background-image:url(assets/tactics.jpg)"></div><div class="foot"><p>15 formations, player roles and zones, team instructions and a goalkeeper lock.</p></div></div>
+    <div class="tile feat"><div class="band">Transfers</div><div class="art" style="background-image:url(assets/shot_transfer.jpg)"></div><div class="foot"><p>Negotiate fees, payments over time, sell-on clauses, bonuses, swaps and loans.</p></div></div>
+    <div class="tile feat"><div class="band">Club HQ</div><div class="art" style="background-image:url(assets/hq.jpg)"></div><div class="foot"><p>Finances, staff, scouting, the academy and a board that expects results.</p></div></div>
+    <div class="tile feat"><div class="band">Sponsors</div><div class="art" style="background-image:url(assets/shot_hq.jpg)"></div><div class="foot"><p>Sign partners from 200 fictional brands and see them on your 2D and 3D shirts.</p></div></div>
+    <div class="tile feat"><div class="band">Matchday</div><div class="art" style="background-image:url(assets/matchday.jpg)"></div><div class="foot"><p>Real-time 3D matches with substitutions, team talks and live commentary.</p></div></div>
+    <div class="tile feat"><div class="band">Your history</div><div class="art" style="background-image:url(assets/awards.jpg)"></div><div class="foot"><p>Trophies, awards and a club reputation that grows or falls season by season.</p></div></div>
+  </div></div>
+</section>
+
+<section id="screens">
+  <div class="sec-head"><h2>Screenshots</h2><span>From version 1.0.0.70</span></div>
+  <div class="panel"><div class="shots">
+    <figure><img src="assets/shot_hq.jpg" alt="Club HQ screen"><figcaption>Club HQ</figcaption></figure>
+    <div class="side">
+      <figure><img src="assets/shot_transfer.jpg" alt="Transfer desk"><figcaption>Transfer desk</figcaption></figure>
+      <figure><img src="assets/shot_squad.jpg" alt="Squad and scouting"><figcaption>Squad and scouting</figcaption></figure>
+    </div>
+  </div></div>
+</section>
+
+<section id="notes">
+  <div class="sec-head"><h2>Patch notes</h2><span>Latest update</span></div>
+  <div class="panel" style="padding:0"><div class="notes">
+    <div class="ver"><span>VERSION</span><b>1.0.0.70</b><span>Your launcher installs updates on its own.</span></div>
+    <ul>
+      <li>Choose your club from a three-card carousel with country, division and search filters</li>
+      <li>Every one of the 689 clubs has its own original crest and home and away kits</li>
+      <li>200 fictional sponsor brands, shown on 2D and 3D shirts</li>
+      <li>Commercial partnership wall: signed partners, offers and contract details</li>
+      <li>Sponsorship budgets, signing fees, match payments and yearly caps</li>
+      <li>Promotion and relegation income forecasts</li>
+      <li>Lasting club reputation, with end-of-season news</li>
+      <li>A stadium preview for each venue</li>
+    </ul>
+  </div></div>
+</section>
+
+<section id="online">
+  <div class="sec-head"><h2>Play with friends</h2><span>Online</span></div>
+  <div class="panel"><div class="how">
+    <div class="step"><i>01</i><h3>Host a world</h3><p>One friend creates an online football world and shares its name and password.</p></div>
+    <div class="step"><i>02</i><h3>Join and pick a club</h3><p>Everyone else joins from Play online in the main menu and takes charge of a club.</p></div>
+    <div class="step"><i>03</i><h3>Trade with friends</h3><p>Do deals in the full transfer desk, with clauses, swaps, loans and payments over time.</p></div>
+  </div></div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div><b>Squad Maestro</b><br>A football management game by Braca Studio.</div>
+  <div>All clubs, players, managers and brands in Squad Maestro are fictional.<br>Fonts: Barlow, SIL Open Font License.</div>
+</div></footer>
+
+<div class="lb" id="lb" onclick="this.style.display='none'"><img id="lbimg" alt=""></div>
+<script>
+document.querySelectorAll('.shots figure').forEach(f=>f.onclick=()=>{lbimg.src=f.querySelector('img').src;lb.style.display='flex'});
+</script>
+</body>
+</html>
