@@ -1,5 +1,13 @@
 window.SM={
 patches:[
+{v:"1.0.0.73",date:"2026-11-18",title:"A new player profile",img:"shot_squad.jpg",summary:"A redesigned player profile with a big portrait, ability and potential stars, a position map and every attribute as a clear number.",sections:[
+{h:"Player profile",items:["Full-width player card with portrait, name and club.","Ability and potential shown as stars.","A small position map with the player's roles.","Condition and morale at a glance.","Every attribute shown by name with its number, without bars.","Separate season totals and a contract summary."]},
+{h:"Goalkeepers",items:["Goalkeepers keep their technical attributes next to goalkeeping, mental and physical ones."]},
+{h:"Scouting",items:["Scouting still decides what you can see: unknown values stay hidden or show a range."]},
+{h:"Easier to read",items:["Long names and large text now wrap and scroll instead of being cut off.","All player actions and profile tabs are still there."]},
+{h:"Design fixes",items:["Club and kit corrections, compact headers and a squad dossier.","Clearer inbox subjects and visible formation actions.","Training shows its state and the next session.","Sponsor terms next to the shirts, easier-to-read windows and helpful empty screens."]},
+{h:"Kept from earlier versions",items:["Stadium shapes, rain and snow, pitch patterns and fairer budgets from 1.0.0.71.","The friend transfer desk and all earlier fixes.","Your existing saves still work. Back up your careers before updating."]},
+{h:"Known issues",items:["Full-match speed and full seasons are still being checked."]}]},
 {v:"1.0.0.71",date:"2026-11-16",title:"Stadiums, weather and club money",img:"clubs.jpg",summary:"Every stadium gets its own shape, new pitch mowing patterns, real rain and snow in 3D, and fairer transfer budgets and debt.",sections:[
 {h:"Stadiums",items:["Each venue now has its own stadium shape: stands, roofs, outside walls and the streets around it.","The stadium preview shows the new look for every club."]},
 {h:"Pitch",items:["Six mowing patterns with different colours and stripe widths.","The grass now wears out and dries depending on its condition."]},
@@ -163,6 +171,7 @@ online:{tag:"Online",title:"Play with friends.",img:"online.jpg",lead:"Share one
 media:[["shot_hq.jpg","Club HQ"],["shot_transfer.jpg","Transfer desk"],["shot_squad.jpg","Squad and scouting"],["stadium.jpg","Matchday stadium"],["clubs.jpg","Choose your club"],["matchday.jpg","Tunnel"],["hq.jpg","Club HQ"],["online.jpg","Training campus"],["tactics.jpg","Tactics"],["tactics2.jpg","Tactics board"],["awards.jpg","Awards night"]]
 };
 SM.news=[
+{href:"patch-notes.html?v=1.0.0.73",cat:"Update",title:"Version 1.0.0.73 is here",img:"shot_squad.jpg",date:"2026-11-18",p:"A redesigned player profile with stars, a position map and clear attribute numbers."},
 {href:"patch-notes.html?v=1.0.0.71",cat:"Update",title:"Version 1.0.0.71 is here",img:"stadium.jpg",date:"2026-11-16",p:"Its own shape for every stadium, rain and snow in 3D, new pitch patterns and fairer transfer budgets."},
 {href:"patch-notes.html?v=1.0.0.70",cat:"Update",title:"Version 1.0.0.70 is here",img:"clubs.jpg",date:"2026-11-16",p:"A new club carousel, original crests and kits for all 689 clubs, and much more."},
 {href:"news.html?id=sponsors",cat:"Feature",title:"200 sponsor brands",img:"shot_hq.jpg",date:"2026-11-16",p:"Sign partners on the new partnership wall and see them on your shirts."},
